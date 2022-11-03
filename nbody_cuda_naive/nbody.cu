@@ -72,9 +72,9 @@ void step(struct body* bo, int num, float dt) {
 double energy(struct body* bo, int num) {
   double e = 0.0f;
   for (int i = 0; i < num; ++i) {
-    double matsqd = sqrt((double) (bo[i].velocity_x * bo[i].velocity_x)
+    double matsqd = (double) (bo[i].velocity_x * bo[i].velocity_x)
       + (bo[i].velocity_y * bo[i].velocity_y) 
-      + (bo[i].velocity_z * bo[i].velocity_z));
+      + (bo[i].velocity_z * bo[i].velocity_z);
     double first  = (bo[i].mass * matsqd) / 2;
     double second = 0.0f;
 
