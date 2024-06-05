@@ -2,11 +2,17 @@
 
 An n-body simulation is an astrophysics model of orbiting bodies within our solar system and galaxy.
 
-This code-base consists of three different implementations of the n-body simulation. A sequential version, an unoptimised CUDA version, and an optimised CUDA version.
+> [!IMPORTANT]
+> This project was built as part of a unit on Concurrency at Sydney University.
 
-Each implementation can either generate random points to be used or receive a file specifying the data.
+This code-base consists of three different implementations of the n-body simulation. 
+* A sequential version, a trivial implementation using only a single core.
+* An unoptimised CUDA version, an implementation that does not perform any optimisation with CUDA.
+* An optimised CUDA version, an implementation intended to be as performant as possible. 
 
-The file must be structured with each line in the following form: 
+Each implementation can either generate random points to be used or receive a file specifying data to use.
+
+This data file must be structured with each line in the following form: 
 ```
 <x>, <y>, <z>, <velocity-x>, <velocity-y>, <velocity-z>, <mass>
 ```
@@ -16,7 +22,9 @@ Command line parameters are defined as:
 ./nbody <iters> <dt> ((-b <bodies> -l <lowerbound> -u <upperbound>) | -f <filename>) <testmode>
 ```
 
-The code can be compiled by running `make`
+Testmode checks the computations performed by the code to ensure a reasonable margin of error. 
+
+The code can be compiled with `make`
 
 ## Example executions
 
